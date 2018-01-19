@@ -2,6 +2,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+var app = getApp()
 
 Page({
     data: {
@@ -9,6 +10,13 @@ Page({
         logged: false,
         takeSession: false,
         requestResult: ''
+    },
+
+    onLoad: function (options) {
+        this.login()
+        wx.redirectTo({
+          url: '../set/set',
+        })
     },
 
     // 用户登录示例
@@ -27,6 +35,9 @@ Page({
                         userInfo: result,
                         logged: true
                     })
+                    app.globalData.hasLogin = true
+                    app.globalData.userInfo = result
+
                 } else {
                     // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
                     qcloud.request({
@@ -38,6 +49,8 @@ Page({
                                 userInfo: result.data.data,
                                 logged: true
                             })
+                            app.globalData.hasLogin = true
+                            app.globalData.userInfo = result.data.data
                         },
 
                         fail(error) {

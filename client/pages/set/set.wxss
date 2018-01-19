@@ -1,0 +1,61 @@
+@import "../common/index.wxss";
+@import "../common/lib/weui.wxss";
+
+button{
+  margin: 0rpx 0;
+}
+.text-box{
+  margin-bottom: 70rpx;
+  padding: 40rpx 0;
+  display: flex;
+  min-height: 300rpx; 
+  background-color: #FFFFFF;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+  border: 1rpx solid black; 
+}
+.radio {
+  margin-right: 20rpx;
+}
+
+.item-editable {
+  margin: 20rpx 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+.wapper-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+}
+.wapper-item-btn {
+}
+
+.wapper-item-text {
+  padding-left: 20rpx;
+  text-align: left;
+  flex: 5;
+}
+
+.wapper-item-icon {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+
+
+.wapper-edit {
+  width: 750rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  text-align: center;
+}
+
