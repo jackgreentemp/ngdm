@@ -1,0 +1,112 @@
+/* pages/ask/ask.wxss */
+@import "../common/lib/weui.wxss";
+.placeholder {
+    margin: 5rpx;
+    padding: 0 20rpx;
+    text-align: center;
+    /* background-color: #EBEBEB; */
+    height: 80rpx;
+    line-height: 80rpx;
+    /* color: #cfcfcf; */
+}
+
+.question {
+  font-size: 40rpx;
+}
+
+.button {
+  /* display: inline-block; */
+  padding: 15rpx 25rpx;
+  font-size: 32rpx;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 15rpx;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+}
+
+.option_container {
+  padding: 15rpx 25rpx;
+  background-color: #fff;
+  border: none;
+  border-radius: 15rpx;
+  box-shadow: 0 8rpx 8rpx 0 rgba(0,0,0,0.2), 0 6rpx 20rpx 0 rgba(0,0,0,0.19);
+}
+
+.option_container:active {
+  background-color: #3e8e41;
+  box-shadow: 0 8rpx 8rpx 0 rgba(0,0,0,0.2), 0 6rpx 20rpx 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+}
+
+.option_item {
+  border: none;
+  border-radius: 15rpx;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+ .option_item:active:not(input) {
+  background-color: lightblue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transform: translateY(4px);
+} 
+
+.wapper {
+  margin-top: 40rpx;
+  position: relative;
+}
+
+.wapper-child {
+  padding: 15rpx 25rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.label-progress {
+  justify-content: center;
+  font-size: 32rpx;
+}
+
+.btn-change-question {
+  margin: 0 10rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-change-question button {
+  margin: 0;
+  width: 200rpx;
+}
+.wapper-input {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+}
+.input-answer {
+  flex: 1;
+  height: 115rpx;
+  background: white;
+  padding: 0 20rpx;
+  border: none;
+  border-radius: 15rpx;
+}
+.btn-input {
+  /* width: 110rpx; */
+  margin: 0; 
+}
+.btn-icon {
+  /* margin: 35rpx 0; */
+}

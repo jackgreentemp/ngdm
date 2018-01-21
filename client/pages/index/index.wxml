@@ -1,16 +1,51 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="btn-area" id="buttonContainer">
-        <!-- <button type="primary">我要出题</button>
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="userinfo">
+    <image class='userinfo-avatar' src="{{logged ? userInfo.avatarUrl : '../../images/user-unlogin.png'}}" background-size="cover"></image>
+    <view class='userinfo-text-container'>
+      <text>橡皮擦 Level 1</text>
+      <view class="userinfo-number-container">
+        <text class='userinfo-number-item'>邀请人数：--</text>
+        <text class='userinfo-number-item'>答卷份数: --</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='container-flex-row rank-container'>
+    <view class='rank-item'>谁最懂我排行榜</view>
+    <view class='rank-item'>我是谁的小棉袄</view>
+  </view>
+
+  <view class="btn-area">
+    <!-- <button type="primary">我要出题</button>
         <button type="default">我要答题</button> -->
 
-        <navigator url="../set/set?title=navigate" hover-class="navigator-hover">
-            <button type="default">我要出题</button>
-        </navigator>
+    <navigator url="../result/result?title=navigate" hover-class="navigator-hover">
+      <button type="default">2份问卷待查看</button>
+    </navigator>
 
-        <navigator url="navigate?title=navigate" hover-class="navigator-hover">
-            <button type="default">我要答题</button>
-        </navigator>
+    <navigator url="../answer/answer?title=navigate" hover-class="navigator-hover">
+      <button type="default">收到一份问卷</button>
+    </navigator>
 
-    </view>    
+    <view class='container-flex-row'>
+
+      <navigator class='item-flex-row-1' url="../bank/bank?title=navigate" hover-class="navigator-hover">
+        <button type="default">题库</button>
+      </navigator>
+
+      <navigator class='item-flex-row-1' url="../ask/ask?title=navigate" hover-class="navigator-hover">
+        <button type="default">我要出题</button>
+      </navigator>
+    </view>
+  </view>
 </view>

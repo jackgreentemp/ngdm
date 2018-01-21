@@ -2,6 +2,7 @@
 
 /* page */
 .container {
+  margin: 0rpx 20rpx;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -16,7 +17,7 @@ button{
 }
 
 .btn-area{
-  margin-top: 60rpx;
+  margin-top: 0;
   box-sizing: border-box;
   width: 100%;
   padding: 0 30rpx;
@@ -92,4 +93,12 @@ button{
 }
 .page-section-ctn{
 
+}
+.container-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.item-flex-row-1 {
+  display: flex;
+  flex: 1;
 }

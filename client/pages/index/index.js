@@ -9,14 +9,28 @@ Page({
         userInfo: {},
         logged: false,
         takeSession: false,
-        requestResult: ''
+        requestResult: '',
+        background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+        indicatorDots: true,
+        vertical: false,
+        autoplay: false,
+        interval: 2000,
+        duration: 500,
+        imgUrls: [
+          'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+          'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        ],
     },
 
     onLoad: function (options) {
         this.login()
-        wx.redirectTo({
-          url: '../set/set',
-        })
+        // wx.redirectTo({
+        //   url: '../set/set',
+        // })
+        // wx.redirectTo({
+        //   url: '../ask/ask',
+        // })
     },
 
     // 用户登录示例
