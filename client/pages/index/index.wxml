@@ -10,12 +10,12 @@
   </swiper>
 
   <view class="userinfo">
-    <image class='userinfo-avatar' src="{{logged ? userInfo.avatarUrl : '../../images/user-unlogin.png'}}" background-size="cover"></image>
+    <image class='userinfo-avatar' src="{{logged ? userInfo.avatarUrl : '../../images/user-unlogin.png'}}" background-size="cover" bindtap='doRequest'></image>
     <view class='userinfo-text-container'>
-      <text>橡皮擦 Level 1</text>
+      <text>{{userInfo.nickName}} Level {{userInfo.StatisticsDatas.level}}</text>
       <view class="userinfo-number-container">
-        <text class='userinfo-number-item'>邀请人数：--</text>
-        <text class='userinfo-number-item'>答卷份数: --</text>
+        <text class='userinfo-number-item'>邀请人数：{{userInfo.StatisticsDatas.invitationNumber}}</text>
+        <text class='userinfo-number-item'>答卷份数: {{userInfo.StatisticsDatas.testNumber}}</text>
       </view>
     </view>
   </view>
@@ -31,7 +31,18 @@
 
     <navigator url="../result/result?title=navigate" hover-class="navigator-hover">
       <button type="default">2份问卷待查看</button>
+      <!-- <view class="weui-badge weui-badge_dot" style="position: releative;top: -.4em;right: -.4em;"></view> -->
     </navigator>
+
+    <!-- <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">单行列表</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                    <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+                    <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+                </view>
+            </view>
+        </view> -->
 
     <navigator url="../answer/answer?title=navigate" hover-class="navigator-hover">
       <button type="default">收到一份问卷</button>

@@ -102,6 +102,7 @@ var login = function login(options) {
             method: options.method,
             data: options.data,
             success: function (result) {
+                // console.log(result.data.data)
                 var data = result.data;
 
                 // 成功地响应会话信息
@@ -109,7 +110,9 @@ var login = function login(options) {
                     var res = data.data
                     if (res.userinfo) {
                         Session.set(res.skey);
-                        options.success(userInfo);
+                        // options.success(userInfo)
+                        // options.success({...userInfo, userId: res.userinfo.userId});
+                        options.success({ ...res.userinfo });
                     } else {
                         var errorMessage = '登录失败(' + data.error + ')：' + (data.message || '未知错误');
                         var noSessionError = new LoginError(constants.ERR_LOGIN_SESSION_NOT_RECEIVED, errorMessage);

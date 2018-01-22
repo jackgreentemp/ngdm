@@ -8,7 +8,7 @@ Page({
     data: {
         userInfo: {},
         logged: false,
-        takeSession: false,
+        takeSession: true,
         requestResult: '',
         background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
         indicatorDots: true,
@@ -58,6 +58,7 @@ Page({
                         url: config.service.requestUrl,
                         login: true,
                         success(result) {
+                            // console.log(result)
                             util.showSuccess('登录成功')
                             that.setData({
                                 userInfo: result.data.data,
@@ -94,12 +95,12 @@ Page({
         util.showBusy('请求中...')
         var that = this
         var options = {
-            url: config.service.dbUrl,
+            url: config.service.requestUrl,
             data: {id: 1},
             login: true,
             success (result) {
+              // console.log(result)
                 util.showSuccess('请求成功完成')
-                console.log('request success', result)
                 that.setData({
                     requestResult: JSON.stringify(result.data)
                 })
