@@ -1,46 +1,52 @@
-@import "../common/index.wxss"; 
-@import "../common/lib/weui.wxss";
 /**index.wxss**/
+
 .slide-image {
   width: 100%;
 }
+
 .userinfo-avatar {
-    width: 100rpx;
-    height: 100rpx;
-     margin: 20rpx; 
-     border-radius: 50%; 
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
 }
+
 .userinfo {
-    margin-top: 40rpx;
-    height: 140rpx;
-    width: 100%;
-    background: #FFF;
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-left: none;
-    border-right: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: all 300ms ease;
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
 }
+
 .userinfo-text-container {
-  width: 600rpx; 
+  width: 600rpx;
   display: flex;
   flex-direction: column;
 }
+
 .userinfo-number-container {
   display: flex;
   flex-direction: row;
   /* justify-content: flex-end; */
 }
+
 .userinfo-number-item {
-  display: flex; 
+  display: flex;
   flex: 1;
 }
+
 .rank-container {
   margin: 50rpx 20rpx;
   justify-content: space-around;
 }
+
 .rank-item {
   display: flex;
   text-align: center;
@@ -50,4 +56,22 @@
   justify-content: center;
   background: lightblue;
   border-radius: 20rpx;
+}
+
+.btn-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.btn-badge {
+  margin: 0 15rpx;
+}
+
+.btn-avatar {
+  width: 32px;
+  height: 32px;
+  margin: 20rpx 10rpx;
+  display: inline-block;
+  vertical-align:middle;
 }

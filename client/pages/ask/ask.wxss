@@ -97,7 +97,7 @@
 }
 .input-answer {
   flex: 1;
-  height: 115rpx;
+  height: 116rpx;
   background: white;
   padding: 0 20rpx;
   border: none;

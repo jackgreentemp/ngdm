@@ -29,7 +29,7 @@ Page({
         //   url: '../set/set',
         // })
         // wx.redirectTo({
-        //   url: '../ask/ask',
+        //   url: '../bank/bank',
         // })
     },
 

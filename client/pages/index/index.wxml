@@ -30,22 +30,20 @@
         <button type="default">我要答题</button> -->
 
     <navigator url="../result/result?title=navigate" hover-class="navigator-hover">
-      <button type="default">2份问卷待查看</button>
-      <!-- <view class="weui-badge weui-badge_dot" style="position: releative;top: -.4em;right: -.4em;"></view> -->
+      <button>
+        <image class='userinfo-avatar btn-avatar' src="{{'../../images/user-unlogin.png'}}" background-size="cover" bindtap='doRequest'></image>
+        <image class='userinfo-avatar btn-avatar' src="{{'../../images/user-unlogin.png'}}" background-size="cover" bindtap='doRequest'></image>
+        <view class='btn-text'>2份问卷待查看</view>
+        <view class="weui-badge weui-badge_dot btn-badge"></view>
+      </button>
+
     </navigator>
 
-    <!-- <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_access">
-                <view class="weui-cell__bd">单行列表</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
-                    <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
-                    <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
-                </view>
-            </view>
-        </view> -->
-
     <navigator url="../answer/answer?title=navigate" hover-class="navigator-hover">
-      <button type="default">收到一份问卷</button>
+      <button>
+        <view class='btn-text'>收到一份问卷</view>
+        <view class="weui-badge weui-badge_dot btn-badge"></view>
+      </button>
     </navigator>
 
     <view class='container-flex-row'>
