@@ -1,23 +1,18 @@
-// pages/answer/answer.js
+// pages/question/question.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      targetInfo: {},
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    var appInstance = getApp()
-    this.setData({
-        targetInfo: { "avatarUrl": appInstance.globalData.userInfo["avatarUrl"],"nickName":"酱油2号"}
-    })
-
+  
   },
 
   /**
