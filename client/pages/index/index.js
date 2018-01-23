@@ -40,47 +40,68 @@ Page({
         util.showBusy('正在登录')
         var that = this
 
-        // 调用登录接口
-        qcloud.login({
-            success(result) {
-                if (result) {
-                    util.showSuccess('登录成功')
-                    that.setData({
-                        userInfo: result,
-                        logged: true
-                    })
-                    app.globalData.hasLogin = true
-                    app.globalData.userInfo = result
+        // 发起 user 请求，若未登录微信，qcloud会请求登录微信
+        qcloud.request({
+          url: config.service.requestUrl,
+          login: true,
+          success(result) {
+            // console.log(result)
+            util.showSuccess('登录成功')
+            that.setData({
+              userInfo: result.data.data,
+              logged: true
+            })
+            app.globalData.hasLogin = true
+            app.globalData.userInfo = result.data.data
+          },
 
-                } else {
-                    // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
-                    qcloud.request({
-                        url: config.service.requestUrl,
-                        login: true,
-                        success(result) {
-                            // console.log(result)
-                            util.showSuccess('登录成功')
-                            that.setData({
-                                userInfo: result.data.data,
-                                logged: true
-                            })
-                            app.globalData.hasLogin = true
-                            app.globalData.userInfo = result.data.data
-                        },
-
-                        fail(error) {
-                            util.showModel('请求失败', error)
-                            console.log('request fail', error)
-                        }
-                    })
-                }
-            },
-
-            fail(error) {
-                util.showModel('登录失败', error)
-                console.log('登录失败', error)
-            }
+          fail(error) {
+            util.showModel('请求失败', error)
+            console.log('request fail', error)
+          }
         })
+
+        // // 调用登录接口
+        // qcloud.login({
+        //     success(result) {
+        //         if (result) {
+        //             util.showSuccess('登录成功')
+        //             that.setData({
+        //                 userInfo: result,
+        //                 logged: true
+        //             })
+        //             app.globalData.hasLogin = true
+        //             app.globalData.userInfo = result
+
+        //         } else {
+        //             // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
+        //             qcloud.request({
+        //                 url: config.service.requestUrl,
+        //                 login: true,
+        //                 success(result) {
+        //                     // console.log(result)
+        //                     util.showSuccess('登录成功')
+        //                     that.setData({
+        //                         userInfo: result.data.data,
+        //                         logged: true
+        //                     })
+        //                     app.globalData.hasLogin = true
+        //                     app.globalData.userInfo = result.data.data
+        //                 },
+
+        //                 fail(error) {
+        //                     util.showModel('请求失败', error)
+        //                     console.log('request fail', error)
+        //                 }
+        //             })
+        //         }
+        //     },
+
+        //     fail(error) {
+        //         util.showModel('登录失败', error)
+        //         console.log('登录失败', error)
+        //     }
+        // })
     },
 
     // 切换是否带有登录态
