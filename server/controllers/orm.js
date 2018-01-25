@@ -28,17 +28,57 @@ var userModel = sequelize.define('userInfo', {
 });
 
 module.exports = async (ctx, next) => {
-  let users = await userModel.findAll();
   
-  for (let user of users) {
-    console.log(JSON.stringify(user))
-  }
-
   if (ctx.state.$wxInfo.loginState === 1) {
     // loginState 为 1，登录态校验成功
-    ctx.state.data = users;
+    //示例数据 {id: 6, open_id: "otIzq0G-eTI85gk8LCEjkUryU-C0", user_info: "{"openId":"otIzq0G-eTI85gk8LCEjkUryU-C0","nickName…estamp":1516588807,"appid":"wx18d48ecadd856a44"}}", create_time: "2018-01-21T18:40:09.000Z", update_time: "2018-01-25T04:15:05.000Z"}
+
+    //创建 持久化示例
+    // ctx.state.data = await userModel.create({
+    //   open_id: "test",
+    //   user_info: "test"
+    // })
+
+    //删除
+    // ctx.state.data = await userModel.destroy({
+    //   where: { id: 9 }
+    // })
+
+    //修改
+    //let user = await userModel.findById(10);
+    // ctx.state.data = await user.update({
+    //   user_info: "123"
+    // })
+
+    //修改
+    // let user = await userModel.findById(10);
+    // user.user_info = "456";
+    // ctx.state.data = await user.save();
+
+    //查询所有
+    // let users = await userModel.findAll();
+
+    // for (let user of users) {
+    //   console.log(JSON.stringify(user))
+    // }
+
+    // ctx.state.data = users;
+
+    //查询一个
+    ctx.state.data = await userModel.findOne();
+
+    //条件查询
+    // ctx.state.data = await userModel.findOne({
+    //   where: {
+    //     open_id: "otIzq0G-eTI85gk8LCEjkUryU-C0"
+    //   },
+    //   attributes: ['id', 'user_info']
+    // })
+
   } else {
     ctx.state.code = -1
   }
+
+
 
 }

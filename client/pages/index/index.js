@@ -274,7 +274,7 @@ Page({
         url: config.service.ormUrl,
         login: true,
         success(result) {
-          console.log(result)
+          console.log(result.data.data)
         },
 
         fail(error) {
