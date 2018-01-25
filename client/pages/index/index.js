@@ -266,5 +266,21 @@ Page({
         }
         util.showBusy('信道连接中...')
         this.setData({ tunnelStatus: 'closed' })
+    },
+    
+    //测试orm
+    testOrm() {
+      qcloud.request({
+        url: config.service.ormUrl,
+        login: true,
+        success(result) {
+          console.log(result)
+        },
+
+        fail(error) {
+          util.showModel('请求失败', error)
+          console.log('request fail', error)
+        }
+      })
     }
 })

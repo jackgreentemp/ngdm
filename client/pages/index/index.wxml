@@ -21,7 +21,7 @@
   </view>
 
   <view class='container-flex-row rank-container'>
-    <view class='rank-item'>谁最懂我排行榜</view>
+    <view class='rank-item' bindtap='testOrm'>谁最懂我排行榜</view>
     <view class='rank-item'>我是谁的小棉袄</view>
   </view>
 

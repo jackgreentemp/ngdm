@@ -2,8 +2,14 @@
  * 小程序配置文件
  */
 
+//是否开发模式，上线前要修改为false
+var dev = true;
+
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://7in6rjqa.qcloud.la';
+
+//开发模式使用easy mock来获取数据
+var mockHost = 'https://www.easy-mock.com/mock/5a66cbdd70d6010b4326d567/weapp'
 
 var config = {
 
@@ -24,7 +30,11 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
 
         // 测试数据库接口
-        dbUrl : `${host}/weapp/db`
+        dbUrl : `${host}/weapp/db`,
+
+        testMockUrl: dev ? `${host}/weapp/test` : `${mockHost}/test`,
+
+        ormUrl: `${host}/weapp/orm`
     }
 };
 

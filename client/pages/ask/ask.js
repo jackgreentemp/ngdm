@@ -1,4 +1,6 @@
 // pages/ask/ask.js
+var config = require('../../config')
+
 Page({
 
   /**
@@ -17,7 +19,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: config.service.testMockUrl,
+      success (result) {
+        console.log(result);
+      },
+      fail (error) {
+        console.log(error)
+      }
+    })
   },
 
   /**
@@ -95,6 +105,7 @@ Page({
    * 编辑选项 完成输入
    */
   btnEditYes: function (e) {
+    console.log(e)
     // console.log(e.detail)
     // console.log(e.target.dataset)
 
