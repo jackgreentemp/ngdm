@@ -1,6 +1,8 @@
 // pages/ask/ask.js
 var config = require('../../config')
 
+let questionIds = []
+
 Page({
 
   /**
@@ -12,7 +14,7 @@ Page({
     options: [
       { id: 0, name: 'A', editable: false },
       { id: 1, name: 'B', editable: false }
-    ]
+    ],
   },
 
   /**
@@ -148,5 +150,20 @@ Page({
     this.setData({
       options: options
     });
+  },
+
+  changeQuestion: function (e) {
+    wx.request({
+      url: config.service.questionUrl,
+      method: 'GET',
+      data: { ids: questionIds.join()},
+      success(result) {
+        console.log(result.data.data);
+        // questionIds.push(result.data.data.id)
+      },
+      fail(error) {
+        console.log(error)
+      }
+    })
   } 
 })

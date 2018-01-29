@@ -9,12 +9,12 @@ module.exports = async (ctx, next) => {
     // ctx.state.$wxInfo格式: {loginState: 1, userinfo: {avatarUrl: "", ...}}
     if (ctx.state.$wxInfo.loginState === 1) {
         // loginState 为 1，登录态校验成功
-      var openId = ctx.state.$wxInfo.userinfo.openId
-      var userId = await mysql("userInfo").select("id").where({ open_id: openId }).first()
-      await mysql("userInfo").update({ update_time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss') }).where({ open_id: openId })
+      // var openId = ctx.state.$wxInfo.userinfo.openId
+      // var userId = await mysql("userInfo").select("id").where({ open_id: openId }).first()
+      // await mysql("userInfo").update({ update_time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss') }).where({ open_id: openId })
 
-      ctx.state.$wxInfo.userinfo.StatisticsDatas = await getUserStatistics()
-      ctx.state.$wxInfo.userinfo.userId = userId.id
+      // ctx.state.$wxInfo.userinfo.StatisticsDatas = await getUserStatistics()
+      // ctx.state.$wxInfo.userinfo.userId = userId.id
       ctx.state.data = ctx.state.$wxInfo.userinfo
     } else {
       ctx.state.code = -1
