@@ -22,7 +22,7 @@
 
   <view class='container-flex-row rank-container'>
     <view class='rank-item' bindtap='testOrm'>谁最懂我排行榜</view>
-    <view class='rank-item'>我是谁的小棉袄</view>
+    <view class='rank-item ripple'>我是谁的小棉袄</view>
   </view>
 
   <view class="btn-area">
@@ -45,6 +45,13 @@
         <view class="weui-badge weui-badge_dot btn-badge"></view>
       </button>
     </navigator>
+
+    <button>
+      <image class='userinfo-avatar btn-avatar btn-ab-left' src="{{'../../images/user-unlogin.png'}}" background-size="cover" bindtap='doRequest'></image>
+      <image class='userinfo-avatar btn-avatar' src="{{'../../images/user-unlogin.png'}}" background-size="cover" bindtap='doRequest'></image>
+      <view class='btn-text'>2份问卷待查看</view>
+      <view class="weui-badge weui-badge_dot btn-badge"></view>
+    </button>
 
     <view class='container-flex-row'>
 

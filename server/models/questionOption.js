@@ -6,7 +6,7 @@ var questionOptionModel = sequelize.define('questionOption', {
   content: Sequelize.STRING(255),
   question_id: Sequelize.INTEGER,
   is_answer: Sequelize.BOOLEAN,
-  uid: Sequelize.INTEGER.UNSIGNED,
+  user_id: Sequelize.INTEGER.UNSIGNED,
   create_time: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
   update_time: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
 }, {

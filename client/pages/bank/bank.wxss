@@ -94,3 +94,68 @@
 .b {
   background: blue;
 }
+
+.test {
+  /* background-image: url(../../images/user-unlogin.png) */
+  background-image: url(dXJsKC4uLy4uL2ltYWdlcy91c2VyLXVubG9naW4ucG5nKQ==);
+}
+
+/* 
+.parent {
+    position: relative;
+    height: 200px;
+}
+.child {
+    width: 180px;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: blue;
+}  */
+
+/* 
+.parent {
+    height: 300px;
+    border: 1px solid red;
+    text-align: center;
+}
+.child {
+    background: blue;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.parent::before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;            
+} */
+
+.image {
+  width: 746rpx;
+}
+
+.image-parent {
+  height: 746rpx; 
+  position: relative;
+  border: 2rpx solid red;
+}
+
+.child {
+  width: 100px;
+  height: 24px;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background: yellowgreen;
+}  

@@ -3,9 +3,7 @@ const Op = Sequelize.Op;
 const questionModel = require('../models/question');
 const optionModel = require('../models/questionOption');
 
-questionModel.hasMany(optionModel)
-questionModel.hasMany(optionModel, { foreignKey: 'question_id', sourceKey: 'id' });
-// optionModel.belongsTo(questionModel, { foreignKey: 'question_id', targetKey: 'id' });
+questionModel.hasMany(optionModel, {as: 'options', foreignKey: 'question_id'})
 
 /**
  * 响应 GET 请求（响应微信配置时的签名检查请求）
@@ -14,28 +12,20 @@ async function get(ctx, next) {
   const { ids } = ctx.query
   const idArray = ids ? ids.split(",") : []
 
-  let questionExample = await questionModel.findOne();
-  let res = await questionExample.getQuestionOptions();
-  // let optionExample = await optionModel.findOne();
-  // let res = await optionExample.getQuestion();
+  let questionExample
 
-  // let questionArray = await questionModel.findAll({
-  //   include: [optionModel],
-  //   where: {
-  //     id: {
-  //       [Op.notIn]: [...idArray]
-  //     }
-  //   },
-  //   attributes: ["id", "question"]
-  // });
+  try {
 
-  // let options = questionArray[0].getOptionModels()
+    questionExample = await questionModel.findOne({
+      where: {id: 1},
+      include: [{model: optionModel, as: 'options'}]
+    });
 
-  // const index = Math.floor(Math.random() * questionArray.length)
+  } catch(e) {
+    console.log(e)
+  }
   
-  // ctx.state.data = questionArray[index]
-
-  ctx.state.data = res
+  ctx.state.data = questionExample
   
 }
 

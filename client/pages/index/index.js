@@ -28,9 +28,9 @@ Page({
         // wx.redirectTo({
         //   url: '../set/set',
         // })
-        wx.redirectTo({
-          url: '../ask/ask',
-        })
+        // wx.redirectTo({
+        //   url: '../ask/ask',
+        // })
     },
 
     // 用户登录示例

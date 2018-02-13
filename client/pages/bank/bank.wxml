@@ -21,3 +21,50 @@
   <view class='flex2 g'>2</view>
   <view class='flex1 b'>3</view>
 </view>
+
+<button style='padding: 0;'>
+  <view class='flex-container1'>
+    <view class='flex1 r'>圆圈</view>
+    <view class='flex2 g'>2</view>
+    <view class='flex1 b'>3</view>
+  </view>
+</button>
+
+<view class='test' style='width: 100%; height: 550rpx; background-color: grey;'></view>
+
+<view style='transform: rotate(-90deg); transform-origin: 0 0; width: 500rpx; position: absolute; left: 10rpx;'>
+  <progress percent="50" stroke-width="20" />
+</view>
+
+<!-- <view style='transform: rotate(-90deg); transform-origin: 0px -0px; width: 500px; position: absolute; right: -400px;'>
+  <progress percent="50" stroke-width="20" />
+</view> -->
+
+<view style='transform: rotate(90deg); transform-origin: 100% 0; width: 500rpx; position: absolute; right: 10rpx;'>
+  <view style='transform: rotate(180deg);'>
+    <progress percent="50" stroke-width="20" />
+  </view>
+</view>
+
+<view style='width: 100%; height: 550rpx; background-color: white;'></view>
+
+<view class="parent">
+   <view class="child">child</view>
+   <!-- <view class="child" style='height: 100px;'>child</view> -->
+</view> 
+
+<!-- <button>
+  <view style='font-size: 32rpx; width: 300rpx; max-height: 100rpx; line-height: 50rpx; word-break: break-all;'>值, 描述. normal, 只在允许的断字点换行（浏览器保持默认处理）。 break-word, 在长单词或URL 地址内部进行换行。 CSS 参考手册 · CSS 参考手册. W3School 简体中文版提供的内容仅用于培训和测试，不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。 使用条款和隐私条款。版权所有，</view>
+</button> -->
+
+<view class="image-parent">
+  <image class='image' mode='widthFix' src='../../images/answer-ad.png'></image>
+  <view class="child">child</view>
+</view> 
+
+<button style='padding: 0;'>
+  <view class="image-parent">
+    <image class='image' mode='widthFix' src='../../images/answer-ad.png'></image>
+    <view class="child">child</view> 
+  </view>
+</button> 
