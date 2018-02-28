@@ -45,3 +45,6 @@ sh/
 sdk.config.json
 
 .DS_Store
+client/pages/bank/bank.wxml
+client/pages/bank/bank.wxml
+client/pages/bank/bank.wxss
