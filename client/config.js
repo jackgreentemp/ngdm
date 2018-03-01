@@ -9,7 +9,7 @@ var dev = true;
 var host = 'https://fn1p4skh.qcloud.la';
 
 //开发模式使用easy mock来获取数据
-var mockHost = 'https://www.easy-mock.com/mock/5a66cbdd70d6010b4326d567/weapp'
+var mockHost = 'http://rap2api.taobao.org/app/mock/6274'
 
 var config = {
 
@@ -36,7 +36,7 @@ var config = {
 
         ormUrl: `${host}/weapp/orm`,
 
-        questionUrl: `${host}/weapp/question`
+        questionUrl: dev ? `${mockHost}/GET/questions` : `${host}/GET/questions`
     }
 };
 

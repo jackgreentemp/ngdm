@@ -1,0 +1,42 @@
+<!--pages/create/create.wxml-->
+
+
+<view class="question-container" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <progress class='question-progress' percent="{{(questionIndex+1)*100/5}}" activeColor="purple" backgroundColor="white" stroke-width="3" />
+ <view class='index-text'> {{questionIndex+1}} / 5 </view>
+  <view class="question-wrapper">
+    <view class="question">{{choosedQuestions[questionIndex].question}}</view>
+  </view>
+
+  <view class="weui-flex options">
+    <view class='options-wapper' wx:for="{{choosedQuestions[questionIndex].options}}" wx:key="*this" wx:for-index="idx" data-choosed-index="{{idx}}" bindtap='userAnswered'>
+
+      <view class="weui-flex__item">
+
+        <button class="option">
+
+          <view class='option-inner'>
+
+            <view class='option-content'> {{item}} </view>
+
+          </view>
+
+        </button>
+
+      </view>
+    </view>
+  </view>
+
+
+<view class='page-button'>
+</view>
+
+<view class="index-button-wrapper">
+<button class='index-button' type="default" bindtap='previousAction'> ⬅ 上一题</button>
+
+<button class='index-button' wx:if="{{questionIndex < choosedQuestions.length-1 || (questionIndex == 0 && choosedQuestions.length == 0)}}" type="default" bindtap='nextAction'>下一题 ➡</button>
+<button class='index-button' wx:else type="default" bindtap='completeAction'>完成</button>
+
+</view>
+
+</view>

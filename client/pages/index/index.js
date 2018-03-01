@@ -25,9 +25,9 @@ Page({
 
     onLoad: function (options) {
         this.login()
-        // wx.redirectTo({
-        //   url: '../set/set',
-        // })
+        wx.redirectTo({
+          url: '../create/create',
+        })
         // wx.redirectTo({
         //   url: '../ask/ask',
         // })
